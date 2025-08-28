@@ -17,7 +17,7 @@ public class Shield : MonoBehaviour
 
     [Header("Phases")]
     [Tooltip("0=100hp, 1=80hp, 2=60hp, 3=40hp, 4=20hp, 5=0hp")]
-    public GameObject[] phases = new GameObject[6];
+    public GameObject[] phases = new GameObject[7];
 
 
     void Awake()
@@ -50,7 +50,7 @@ public class Shield : MonoBehaviour
 
             Debug.Log("Shield (Trigger) detected AttackCollider while held");
 
-            shieldHealth = Mathf.Max(0f, shieldHealth - 5f);
+            shieldHealth = Mathf.Max(0f, shieldHealth - 10);
             UpdateShieldUI();
             UpdatePhaseVisual();
 
@@ -73,7 +73,7 @@ public class Shield : MonoBehaviour
     }
     private void UpdatePhaseVisual()
     {
-        if (phases.Length != 6)
+        if (phases.Length != 7)
         {
             Debug.LogWarning("Assign exactly 6 shield phase objects!");
             return;
@@ -81,11 +81,12 @@ public class Shield : MonoBehaviour
 
         int index;
         if (shieldHealth > 90f) index = 0;
-        else if (shieldHealth > 70f) index = 1;
-        else if (shieldHealth > 50f) index = 2;
-        else if (shieldHealth > 30f) index = 3;
-        else if (shieldHealth > 10f) index = 4;
-        else index = 5;
+        else if (shieldHealth > 80f) index = 1;
+        else if (shieldHealth > 70f) index = 2;
+        else if (shieldHealth > 50f) index = 3;
+        else if (shieldHealth > 30f) index = 4;
+        else if (shieldHealth > 1f) index = 5;
+        else index = 6;
 
         // Enable only the correct phase
         for (int i = 0; i < phases.Length; i++)
