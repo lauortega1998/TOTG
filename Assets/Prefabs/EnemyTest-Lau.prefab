@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 7957748411240010229}
   m_Layer: 13
   m_Name: EnemyAttackCollider
-  m_TagString: Untagged
+  m_TagString: AttackCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,10 +129,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 17408
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1073806334
+    m_Bits: 1073789950
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -348,11 +348,6 @@ MonoBehaviour:
   countdownTime: 3
   isEnemyCollided: 0
   levelManager: {fileID: 0}
-  raycastDistance: 10
-  raycastLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  raycastOrigin: {fileID: 8305025830420269389}
   enemyAttackEffect: {fileID: 8813073879207027401}
   enemyAttackCollider: {fileID: 4037103055099411616}
   enemyattackScript: {fileID: 0}

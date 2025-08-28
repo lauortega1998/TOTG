@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 4992088989611647587}
   - component: {fileID: 5491341996371238305}
   - component: {fileID: 7079953893407229385}
-  - component: {fileID: 8176849572615613333}
   - component: {fileID: 6680935557191007253}
   - component: {fileID: 3664191215543006149}
   - component: {fileID: 348676294357034251}
-  m_Layer: 16
+  - component: {fileID: 4206777111523784689}
+  m_Layer: 14
   m_Name: Shield_Weapon_Left (1)
   m_TagString: Shield
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Rigidbody:
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -134,7 +134,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -268,19 +268,6 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 1
---- !u!114 &8176849572615613333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296810381988919220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c1bd518c3c1c5447be010c9d18f92d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100000
 --- !u!114 &6680935557191007253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +311,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundName: grab
+--- !u!114 &4206777111523784689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296810381988919220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b8b5726202c2c418ab17d7efd58f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldHealth: 0
+  isGrabbed: 0
+  attackCollider: {fileID: 0}
 --- !u!1 &2864055097607890434
 GameObject:
   m_ObjectHideFlags: 0

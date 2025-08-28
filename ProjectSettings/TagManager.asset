@@ -18,6 +18,7 @@ TagManager:
   - HeavyEnemy
   - Crosshair
   - ProjectileDamage
+  - AttackCollider
   layers:
   - Default
   - TransparentFX

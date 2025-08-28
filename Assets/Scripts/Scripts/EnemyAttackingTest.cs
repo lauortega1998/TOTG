@@ -12,9 +12,8 @@ public class EnemyAttackingTest : MonoBehaviour
     private int lastPrintedTime = -1;
     public bool isEnemyCollided = false;
     public LevelManager levelManager;
-    public float raycastDistance = 10f;
-    public LayerMask raycastLayers;
-    public Transform raycastOrigin;
+    //public LayerMask raycastLayers;
+    //public Transform raycastOrigin;
     private Transform raycastTarget;
     public GameObject enemyAttackEffect;
     public GameObject enemyAttackCollider;
