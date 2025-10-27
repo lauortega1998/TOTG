@@ -473,7 +473,7 @@ MonoBehaviour:
           materialQuality: 0
         m_CustomOrBakedReflection:
           bitDatas:
-            data1: 4643523038027597
+            data1: 4643523019153229
             data2: 12898309406071980048
           lodBias: 1
           lodBiasMode: 0
