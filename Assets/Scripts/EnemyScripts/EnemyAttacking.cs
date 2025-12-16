@@ -11,12 +11,33 @@ public class EnemyAttacking : MonoBehaviour
 
     public GameObject heavyEnemy;
     public GameObject enemy;
+
     public void Start()
     {
-        playerHealth = FindObjectOfType<PlayerHealth>();
+        // Prefer inspector assignment; fall back to fastest, safest lookups with clear warnings.
+        if (playerHealth == null)
+        {
+            // 1) Try finding the player by tag (recommended pattern if your player GameObject has the "Player" tag)
+            var playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null)
+            {
+                playerHealth = playerObj.GetComponent<PlayerHealth>();
+            }
 
+            // 2) Fallback to FindObjectOfType only if necessary
+            if (playerHealth == null)
+            {
+                playerHealth = FindObjectOfType<PlayerHealth>();
+            }
+
+            // 3) If still null, log an explicit error so the issue is obvious in Editor
+            if (playerHealth == null)
+            {
+                Debug.LogError($"{gameObject.name}: PlayerHealth not found. Assign a PlayerHealth in the inspector or ensure a GameObject tagged \"Player\" has a PlayerHealth component.");
+            }
+        }
     }
-    
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("MovementStopper") && !timerStarted)

@@ -69,16 +69,16 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         StartCoroutine(LevelFlow());
-        Debug.Log("game started");
+        
     }
 
     private IEnumerator LevelFlow()
     {
-        Debug.Log("Start button pressed. Starting in 5 seconds...");
+        //Debug.Log("Start button pressed. Starting in 5 seconds...");
         yield return new WaitForSeconds(5f);
 
         // Tutorial Level
-        Debug.Log("Tutorial started. Duration: 1 minute.");
+        //Debug.Log("Tutorial started. Duration: 1 minute.");
         RotateBannerLightY(newYRotation_Tutorial);
 
         enemyspawnerLevelTutorial.SetActive(true);
