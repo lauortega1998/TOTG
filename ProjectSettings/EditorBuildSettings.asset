@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/int-mountain.unity
+    path: Assets/Scenes/MountainMenu.unity
     guid: f2b9a2d2b9827124791d4569212cc63d
   - enabled: 1
-    path: Assets/Scenes/int-arena.unity
+    path: Assets/Scenes/MetalSaber.unity
     guid: 667a71c0108d83348bb7d3c6eb929885
   - enabled: 1
     path: Assets/Scenes/MetalSaberForEver.unity
