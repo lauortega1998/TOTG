@@ -55,7 +55,6 @@ public class LevelManager : MonoBehaviour
         // Initial ground color to black
 
         normalPostProcessing.SetActive(true);
-        Debug.Log("Start: Black ground for 30 seconds. Waiting for Start Button.");
     }
 
     public void Awake()
