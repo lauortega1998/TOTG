@@ -53,7 +53,6 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         // Initial ground color to black
-        floorRenderer.material.color = blackColor;
 
         normalPostProcessing.SetActive(true);
         Debug.Log("Start: Black ground for 30 seconds. Waiting for Start Button.");
@@ -93,7 +92,6 @@ public class LevelManager : MonoBehaviour
 
         // ICE LEVEL
         Debug.Log("Transition to Ice level...");
-        yield return StartCoroutine(TransitionGroundColor(blueColor));
 
         Debug.Log("Countdown before Ice level...");
         
@@ -117,7 +115,6 @@ public class LevelManager : MonoBehaviour
 
         // FIRE LEVEL
         Debug.Log("Transition to Fire level...");
-        yield return StartCoroutine(TransitionGroundColor(redColor));
 
         Debug.Log("Countdown before Fire level...");
         snowEffect.SetActive(false);
@@ -178,40 +175,6 @@ public class LevelManager : MonoBehaviour
         }
         yield return new WaitForSeconds(delayBeforeLoad);
         SceneManager.LoadScene("MountainMenu"); // Replace with actual scene name or index
-    }
-
-    private IEnumerator TransitionGroundColor(Color targetColor)
-    {
-        Material floorMat = floorRenderer.material;
-        Color startColor = floorMat.color;
-        Color black = blackColor;
-
-        float halfDuration = transitionDuration / 2f;
-        float time = 0f;
-
-        // Step 1: Fade to black
-        while (time < halfDuration)
-        {
-            time += Time.deltaTime;
-            floorMat.color = Color.Lerp(startColor, black, time / halfDuration);
-            yield return null;
-        }
-
-        floorMat.color = black;
-
-        // Optional: hold on black briefly
-        yield return new WaitForSeconds(0.2f);
-
-        // Step 2: Fade from black to target
-        time = 0f;
-        while (time < halfDuration)
-        {
-            time += Time.deltaTime;
-            floorMat.color = Color.Lerp(black, targetColor, time / halfDuration);
-            yield return null;
-        }
-
-        floorMat.color = targetColor;
     }
 
     private IEnumerator Countdown(float seconds)
